@@ -64,7 +64,7 @@ export default function Home() {
             </ul>
           </div>
 
-          <h1 className="text-xl md:text-2xl text-center md:text-left">
+          <h1 className="text-xl md:text-2xl">
             Are you ready to smash your daily goals?
           </h1>
           <h2>
