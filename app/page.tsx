@@ -4,9 +4,11 @@ import { useState } from "react";
 import AuthModal from "./components/AuthModal";
 import Signup from "./components/Signup";
 import Signin from "./components/Signin";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [authMode, setAuthMode] = useState<"signin" | "signup" | null>(null);
+  const router = useRouter();
   return (
     <>
       <section className="my-15 px-4 flex flex-col items-center justify-center">
@@ -90,6 +92,17 @@ export default function Home() {
               {authMode === "signup" ? <Signup /> : <Signin />}
             </AuthModal>
           )}
+        </div>
+         <div>
+          <h2 className="text-2xl md:text-3xl">Wait!!! ✋, that&apos;s not all 😁🙃 </h2>
+        <p>I also implemented a simple chat page, check it out 🤭</p>
+        {/* <button className="text-slate-50 bg-slate-700 hover:bg-slate-800 px-5 py-2 mt-4 rounded-full cursor-pointer">Go to Chat</button> */}
+        </div>
+        <div className="mt-5">
+
+        <button onClick={() => router.push('/chat')} className="text-slate-50 bg-slate-700 hover:bg-slate-800 px-5 py-2  rounded-full cursor-pointer">
+        Go to Chat
+        </button>
         </div>
       </section>
     </>
